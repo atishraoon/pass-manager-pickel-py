@@ -5,7 +5,7 @@ import sys
 import csv
  
 todos = []
-TODO_FILE = "E:/tool/scripts/data.pkl"
+TODO_FILE = "data.pkl"
 JSON_FILE = os.path.join(os.path.expanduser("~"), "Desktop", "todos.json")
 CSV_FILE = os.path.join(os.path.expanduser("~"), "Desktop", "todos.csv")
 
