@@ -29,6 +29,10 @@ A simple Command Line Interface (CLI) Password Manager application for securely 
 
 1. Clone or download the repository.
 2. Install Python if it’s not already installed.
+3. install requirements
+```bash
+pip install -r requirements.txt
+```
 
 ### Running the Application
 
@@ -70,13 +74,13 @@ python pass.py csv
 
 ## Security Note
 
-This application saves passwords in plain text. It is advisable to use it only for personal or non-critical data. For a more secure implementation, consider using encryption techniques.
+This application saves passwords in an encrypted form using AES encryption (256-bit key). This ensures that the file is unreadable without the correct decryption key.. 
 
 ---
 
 ## Customization
 
-- **File Paths:** Modify the `TODO_FILE`, `JSON_FILE`, and `CSV_FILE` variables to change the default storage and export locations.
+- **File Paths:** Modify the `KEY_FILE` `TODO_FILE`, `JSON_FILE`, and `CSV_FILE` variables to change the default storage and export locations.
 ---
 
 ## Acknowledgments
