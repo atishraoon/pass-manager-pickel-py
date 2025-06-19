@@ -2,7 +2,7 @@
 
 A simple Command Line Interface (CLI) Password Manager application for securely storing and managing your passwords. The application allows you to add, update, delete, search, and export stored credentials in JSON or CSV formats.
 
----
+
 
 ## Features
 
@@ -13,7 +13,7 @@ A simple Command Line Interface (CLI) Password Manager application for securely 
 5. **Search Passwords:** Find entries using a search term.
 6. **Export to JSON or CSV:** Save all stored credentials into JSON or CSV files for backup or sharing purposes.
 
----
+
 
 ## File Structure
 
@@ -21,7 +21,7 @@ A simple Command Line Interface (CLI) Password Manager application for securely 
 - **`todos.json`**: JSON export of the stored credentials.
 - **`todos.csv`**: CSV export of the stored credentials.
 
----
+
 
 ## Setup and Usage
 
@@ -56,7 +56,7 @@ python pass.py json
 python pass.py csv
 ```
 
----
+
 
 ## Application Workflow
 
@@ -69,26 +69,26 @@ python pass.py csv
    - `Q`: Quit the application.
 3. **Data Persistence:** All changes are automatically saved in `data.pkl`.
 
----
+
 
 
 ## Security Note
 
 This application saves passwords in an encrypted form using AES encryption (256-bit key). This ensures that the file is unreadable without the correct decryption key.. 
 
----
+
 
 ## Customization
 
 - **File Paths:** Modify the `KEY_FILE` `TODO_FILE`, `JSON_FILE`, and `CSV_FILE` variables to change the default storage and export locations.
----
+
 
 ## Acknowledgments
 
 Special thanks to the Python community for the tools and libraries used in this project.
 
----
+
 ## Upcoming Updates / info
-- This cli tool i snow available in `GUI`
+- This cli tool is now available in `GUI`
 - portable version of this program.
 
