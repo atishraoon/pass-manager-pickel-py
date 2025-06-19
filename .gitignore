@@ -1,0 +1,10 @@
+#database > data.pkl
+*.pkl
+
+#encryption key 
+*.key
+
+#ignore virtual envriornment folder
+env/
+venv/
+
