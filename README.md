@@ -87,3 +87,8 @@ This application saves passwords in an encrypted form using AES encryption (256-
 
 Special thanks to the Python community for the tools and libraries used in this project.
 
+---
+## Upcoming Updates / info
+- This cli tool i snow available in `GUI`
+- portable version of this program.
+
