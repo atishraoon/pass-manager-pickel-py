@@ -38,6 +38,7 @@ class PygameWindow:
         self.password = ''
         
         
+        self.read_from_file()
         self.show_home_screen()
 
 
@@ -66,6 +67,7 @@ class PygameWindow:
             size=(self.settings.POPUP_WIDTH, self.settings.POPUP_HEIGHT),
             on_submit=self.handle_pass  
         )
+        print(self.todos) 
 
     def handle_pass(self, title, username, password):
  
@@ -139,7 +141,8 @@ class PygameWindow:
     def show_home_screen(self):
 
         self.home_screen = HomeScreen(self.manager,
-            (self.settings.WIDTH, self.settings.HEIGHT))
+            (self.settings.WIDTH, self.settings.HEIGHT),
+            self.todos)
 
 
     # ---------------------------------------- all events --------------------------

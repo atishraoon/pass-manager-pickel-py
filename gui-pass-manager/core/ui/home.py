@@ -3,10 +3,11 @@ import pygame_gui
 from ..settings import *
 
 class HomeScreen:  
-    def __init__(self, manager, screen_dimensions):
+    def __init__(self, manager, screen_dimensions,todos):
         self.settings = Settings()
         self.manager = manager
         self.screen_width, self.screen_height = screen_dimensions
+        self.todos = todos 
         
         self.create_ui()
 
