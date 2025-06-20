@@ -49,8 +49,8 @@ class PygameWindow:
     def save_to_file(self):
         with open(self.settings.TODO_FILE, "wb") as file:
             pickle.dump(self.todos, file)
+             
 
- 
     def read_from_file(self):
         if os.path.exists(self.settings.TODO_FILE):
             with open(self.settings.TODO_FILE, "rb") as file:
@@ -70,12 +70,10 @@ class PygameWindow:
         print(self.todos) 
 
     def handle_pass(self, title, username, password):
- 
         print(f"Title: {title}")
         print(f"Username: {username}")
         print(f"Password: {password}")  
         
-     
         self.title = title
         self.username = username
         self.password = password
@@ -87,6 +85,10 @@ class PygameWindow:
         self.todo = self.title, self.username, self.password
         self.todos.append(self.todo)
         self.save_to_file()
+        
+        # Update the home screen table with the new data
+        if hasattr(self, 'home_screen'):
+            self.home_screen.update_table_data(self.todos)
     
  
 
@@ -144,6 +146,7 @@ class PygameWindow:
             (self.settings.WIDTH, self.settings.HEIGHT),
             self.todos)
 
+      
 
     # ---------------------------------------- all events --------------------------
    
