@@ -18,6 +18,16 @@ class Settings:
         self.NAV_BUTTON_HOVER_COLOR = (100, 100, 100)
         self.BUTTON_TEXT_COLOR = (220, 220, 220)
 
+        #database / export
+        self.TODO_FILE = "core/data.pkl"
+        self.JSON_FILE = os.path.join(os.path.expanduser("~"), "Desktop", "pass.json")
+        self.CSV_FILE = os.path.join(os.path.expanduser("~"), "Desktop", "pass.csv")
+
+        # Popup settings
+        self.POPUP_WIDTH = 500
+        self.POPUP_HEIGHT = 600
+        self.POPUP_TITLE_COLOR = (70, 130, 180)
+
 
    
  
