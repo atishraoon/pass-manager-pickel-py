@@ -37,14 +37,14 @@ class AddPassDialog:
         # Title field
         Label(self.window, text="Title:").pack(pady=(20, 5))
         self.title_var = StringVar()
-        self.title_entry = Entry(self.window, textvariable=self.title_var, width=40)
-        self.title_entry.pack()
+        self.title_entry = Entry(self.window, textvariable=self.title_var, width=45)
+        self.title_entry.pack(ipady=5)
         
         # Username field
         Label(self.window, text="Username:").pack(pady=(15, 5))
         self.username_var = StringVar()
-        self.username_entry = Entry(self.window, textvariable=self.username_var, width=40)
-        self.username_entry.pack()
+        self.username_entry = Entry(self.window, textvariable=self.username_var, width=45)
+        self.username_entry.pack(ipady=5)
         
         # Password field
         Label(self.window, text="Password:").pack(pady=(15, 5))
@@ -52,10 +52,10 @@ class AddPassDialog:
         self.password_entry = Entry(
             self.window, 
             textvariable=self.password_var, 
-            width=40,
-            show="*"  # Show password as asterisks
+            width=45,
+            # show="*"  # Show password as asterisks
         )
-        self.password_entry.pack()
+        self.password_entry.pack(ipady=5)
         
         # Submit button
         submit_btn = ttk.Button(

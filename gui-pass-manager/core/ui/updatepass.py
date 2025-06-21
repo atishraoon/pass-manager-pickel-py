@@ -48,14 +48,14 @@ class UpdatePassDialog:
         # Title field
         Label(self.window, text="New Title:").pack(pady=(10, 5))
         self.title_var = StringVar(value=current_title)
-        self.title_entry = Entry(self.window, textvariable=self.title_var, width=40)
-        self.title_entry.pack()
+        self.title_entry = Entry(self.window, textvariable=self.title_var, width=45)
+        self.title_entry.pack(ipady=5)
         
         # Username field
         Label(self.window, text="New Username:").pack(pady=(10, 5))
         self.username_var = StringVar(value=current_username)
-        self.username_entry = Entry(self.window, textvariable=self.username_var, width=40)
-        self.username_entry.pack()
+        self.username_entry = Entry(self.window, textvariable=self.username_var, width=45)
+        self.username_entry.pack(ipady=5)
         
         # Password field
         Label(self.window, text="New Password:").pack(pady=(10, 5))
@@ -63,10 +63,10 @@ class UpdatePassDialog:
         self.password_entry = Entry(
             self.window, 
             textvariable=self.password_var, 
-            width=40,
-            show="*"  # Show password as asterisks
+            width=45,
+            # show="*"  # Show password as asterisks
         )
-        self.password_entry.pack()
+        self.password_entry.pack(ipady=5)
         
         # Submit button
         submit_btn = ttk.Button(
