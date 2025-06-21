@@ -1,5 +1,7 @@
 from tkinter import ttk, Frame, Label
 from tkinter.font import Font
+from tkinter import ttk, Frame, Label, Entry, StringVar
+from tkinter.font import Font
 
 class HomeScreen:
     def __init__(self, root, app):
@@ -36,29 +38,39 @@ class HomeScreen:
         )
         self.add_btn.pack(side='left', padx=5)
         
-        # self.update_btn = ttk.Button(
-        #     btn_frame, 
-        #     text="Update", 
-        #     command=lambda: messagebox.showinfo("Info", "Update functionality not implemented yet")
-        # )
-        # In HomeScreen class, change the update button creation to:
-        
         self.update_btn = ttk.Button(
             btn_frame, 
             text="Update", 
             command=lambda: self.app.show_update_dialog(self.get_selected_id())
         )
         self.update_btn.pack(side='left', padx=5)
-
+        
         self.delete_btn = ttk.Button(
             btn_frame, 
             text="Delete", 
             command=lambda: self.app.show_delete_dialog(self.get_selected_id())
         )
         self.delete_btn.pack(side='left', padx=5)
-
-        # Add this new method to HomeScreen class:
         
+        # Search frame
+        search_frame = Frame(header_frame)
+        search_frame.pack(side='right', padx=10)
+        
+        self.search_var = StringVar()
+        self.search_entry = Entry(
+            search_frame, 
+            textvariable=self.search_var,
+            width=25,
+            font=('Segoe UI', 10)
+        )
+        self.search_entry.pack(side='left', padx=5 , ipady=5) 
+        
+        self.search_btn = ttk.Button(
+            search_frame,
+            text="Search",
+            command=self.app.handle_search
+        )
+        self.search_btn.pack(side='left')
         
         # Export buttons frame
         export_frame = Frame(header_frame)

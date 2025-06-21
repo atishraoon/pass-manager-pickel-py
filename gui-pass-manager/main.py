@@ -176,6 +176,36 @@ class PasswordManager:
         self.todos[todo_id] = (title, username, password)
         self.save_to_file()
         self.home_screen.update_table_data(self.todos) 
+
+
+    def handle_search(self):
+        search_text = self.home_screen.search_var.get().strip().lower()
+        
+        if not search_text:
+            # If search is empty, reload original data
+            self.read_from_file()
+            self.home_screen.update_table_data(self.todos)
+            return
+        
+        # Search in todos (title, username, or password)
+        search_results = []
+        for todo in self.todos:
+            if (search_text in todo[0].lower() or  # title
+                search_text in todo[1].lower() or  # username
+                search_text in todo[2].lower()):    # password
+                search_results.append(todo)
+        
+        if search_results:
+            self.home_screen.update_table_data(search_results)
+        else:
+            messagebox.showinfo("No Results", "No matching passwords found")
+            self.home_screen.search_var.set("")  # Clear search field
+
+    def reset_search(self):
+        """Reset the search and show all todos"""
+        self.home_screen.search_var.set("")
+        self.read_from_file()
+        self.home_screen.update_table_data(self.todos)
     
     def handle_pass(self, title, username, password):
         if not title or not username or not password:
