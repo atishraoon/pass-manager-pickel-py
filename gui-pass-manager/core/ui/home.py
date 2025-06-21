@@ -1,5 +1,3 @@
-from tkinter import ttk, Frame, Label
-from tkinter.font import Font
 from tkinter import ttk, Frame, Label, Entry, StringVar
 from tkinter.font import Font
 
