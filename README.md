@@ -89,5 +89,5 @@ Special thanks to the Python community for the tools and libraries used in this 
 
 
 ## Upcoming Updates / info
-- IN gui application addition of encryption and decryption.
-- IN portable version application addition of encryption and decryption.
+- In gui application implementation of encryption and decryption.
+- In portable version application implementation of encryption and decryption.
