@@ -2,7 +2,6 @@
 
 # pass-manager  
 
---
 
 **command to compile**
 
