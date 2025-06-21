@@ -89,6 +89,5 @@ Special thanks to the Python community for the tools and libraries used in this 
 
 
 ## Upcoming Updates / info
-- This cli tool is now available in `GUI`
-- portable version of this program.
-
+- IN gui application addition of encryption and decryption.
+- IN portable version application addition of encryption and decryption.
