@@ -8,3 +8,9 @@
 env/
 venv/
 
+#ignore compiled folder
+# PyInstaller output
+dist/
+build/
+*.spec
+
