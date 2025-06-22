@@ -39,17 +39,76 @@ class PasswordManager:
         self.home_screen = HomeScreen(self.root, self)
         
     def configure_styles(self):
-        """Configure modern styles for widgets"""
-        self.style.configure('TFrame', background='#f5f5f5')
-        self.style.configure('TLabel', background='#f5f5f5', font=('Segoe UI', 10))
-        self.style.configure('Header.TLabel', font=('Segoe UI', 12, 'bold'))
-        self.style.configure('TButton', font=('Segoe UI', 10), padding=5)
-        self.style.configure('Accent.TButton', background='#4a90e2', foreground='white')
-        self.style.configure('Treeview', font=('Segoe UI', 10), rowheight=25)
-        self.style.configure('Treeview.Heading', font=('Segoe UI', 10, 'bold'))
-        self.style.map('Treeview', background=[('selected', '#4a90e2')])
-        self.style.map('Accent.TButton', 
-                      background=[('active', '#3a7bc8'), ('!active', '#4a90e2')])
+        """Configure modern light styles for widgets"""
+        # Base styles
+        self.style.configure('.', 
+                            background=self.settings.BACKGROUND,
+                            foreground=self.settings.TEXT,
+                            font=('Segoe UI', 10))
+        
+        # Frame styles
+        self.style.configure('TFrame', 
+                            background=self.settings.BACKGROUND)
+        
+        # Label styles
+        self.style.configure('TLabel', 
+                            background=self.settings.BACKGROUND,
+                            foreground=self.settings.TEXT)
+        self.style.configure('Header.TLabel', 
+                            font=('Segoe UI', 12, 'bold'),
+                            foreground=self.settings.TEXT)
+        
+        # Button styles
+        self.style.configure('TButton', 
+                            background=self.settings.SECONDARY_BG,
+                            foreground=self.settings.TEXT,
+                            borderwidth=1,
+                            relief='solid',
+                            padding=5)
+        self.style.configure('Accent.TButton', 
+                            background=self.settings.ACCENT,
+                            foreground='white')
+        self.style.map('TButton',
+                      background=[('active', self.settings.TERTIARY_BG)],
+                      relief=[('pressed', 'sunken')])
+        self.style.map('Accent.TButton',
+                      background=[('active', self.settings.ACCENT_HOVER), 
+                                 ('!active', self.settings.ACCENT)])
+        
+        # Entry styles
+        self.style.configure('TEntry',
+                            fieldbackground=self.settings.SECONDARY_BG,
+                            foreground=self.settings.TEXT,
+                            insertcolor=self.settings.TEXT,
+                            bordercolor=self.settings.BORDER,
+                            lightcolor=self.settings.BORDER,
+                            darkcolor=self.settings.BORDER)
+        
+        # Treeview styles
+        self.style.configure('Treeview',
+                            background=self.settings.SECONDARY_BG,
+                            foreground=self.settings.TEXT,
+                            fieldbackground=self.settings.SECONDARY_BG,
+                            borderwidth=0)
+        self.style.configure('Treeview.Heading',
+                            background=self.settings.TERTIARY_BG,
+                            foreground=self.settings.TEXT,
+                            font=('Segoe UI', 10, 'bold'))
+        self.style.map('Treeview',
+                      background=[('selected', self.settings.ACCENT)],
+                      foreground=[('selected', 'white')])
+        
+        # Scrollbar styles
+        self.style.configure('Vertical.TScrollbar',
+                            background=self.settings.TERTIARY_BG,
+                            troughcolor=self.settings.BACKGROUND,
+                            bordercolor=self.settings.BACKGROUND,
+                            arrowcolor=self.settings.TEXT)
+        self.style.configure('Horizontal.TScrollbar',
+                            background=self.settings.TERTIARY_BG,
+                            troughcolor=self.settings.BACKGROUND,
+                            bordercolor=self.settings.BACKGROUND,
+                            arrowcolor=self.settings.TEXT)
     
     # -------------------------- delete password -------------------------------
     def show_delete_dialog(self, selected_id=None):
